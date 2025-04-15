@@ -1,0 +1,75 @@
+EX.NO : 4(B)                  C++ COMPOSITION VS. INHERITANCE
+DATE : 
+
+PROGRAM STATEMENT :
+
+To write a CPP program to demonstrate on the object composition (use character data).
+
+ALGORITHM:  
+
+1.	Start the program.
+2.	Define a class A that has a character variable and a constructor to initialize it, along with a method to display its value.
+3.	Define a class B that contains an object of class A and uses an initializer list to initialize it through B's constructor. Include a display method to show the value of A's object.
+4.	In the main function, read a character input, create an object of class B with this input, and call the displa’y method.
+5.	End the program.
+
+PROGRAM:
+
+#include <iostream> 
+#include <string>
+using namespace std;
+
+
+class A 
+{
+char a; // Member variable to storethestring
+
+public:
+ A(char str)
+{
+a = str;
+cout << "Constructor A(char a) is invoked" << endl;
+}
+
+void display()
+{
+cout << "Data in memberobject of class A in class B = " << a << endl;
+}
+};
+
+ class B {
+A objA; // Object of class A as amember of class B
+
+public:
+ B(charstr):objA(str) // Usinginitializer list to initialize objA
+{
+cout << "Data in object ofclass B = " << str << endl;
+}
+
+void display()
+{
+objA.display();
+}
+};
+
+ int main()
+{
+char input;
+cin >> input;
+
+B objB(input); // Create an object of class B with the input string 
+objB.display(); // Displaydata in objBand its composed object objA
+
+return 0;
+}
+
+OUTPUT :
+
+Constructor A(char a) is invoked
+Data in object ofclass B = R
+Data in memberobject of class A in class B = R
+
+
+RESULT :
+
+Thus, the C++ program to demonstrate on the object composition is created successfully.
