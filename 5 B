@@ -18,15 +18,21 @@ ALGORITHM:
 
 PROGRAM:
 
-// Usinginbuilt stack libraryto createstack #include <iostream>
-#include <stack> #include <string> usingnamespacestd;
+// Usinginbuilt stack libraryto createstack 
+#include <iostream>
+#include <stack> 
+#include <string> 
+using namespace std;
 
-int priority (char alpha){ if(alpha == '+' ||alpha =='-')
+int priority (char alpha)
+{ if(alpha == '+' ||alpha =='-')
 return 1;
 
-if(alpha == '*' || alpha=='/') return 2;
+if(alpha == '*' || alpha=='/')
+return 2;
 
-if(alpha == '^') return 3;
+if(alpha == '^') 
+return 3;
 
 return 0;
 }
@@ -42,11 +48,13 @@ while(infix[i]!='\0')
 // ifoperand add to thepostfix expression
 if( ( (infix[i]>='a') && (infix[i]<='z') ) || ( (infix[i]>='A') && (infix[i]<='Z')) )
 {
-postfix+= infix[i]; i++;
+postfix+= infix[i];
+i++;
 }
 // ifopening bracket thenpushthestack else if(infix[i]=='(')
 {
-s.push(infix[i]); i++;
+s.push(infix[i]); 
+i++;
 }
 // if closing bracket encounted thenkeep popping fromstack until
 // closingapairopeningbracket is not encountered else if(infix[i]==')')
