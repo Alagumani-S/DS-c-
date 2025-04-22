@@ -1,0 +1,45 @@
+EX.NO : 8(A)
+
+TREE REPRESENTATION AND TRAVERSALS
+DATE : 
+
+PROGRAM STATEMENT:
+
+To write a C++ Function to perform Inorder traversal of the below given tree.
+
+
+
+
+ALGORITHM:  
+
+1.	Start the program.
+2.	Define Node: Create a Node structure with data and next pointer.
+3.	Push: Insert a new node at the rear of the queue by updating the rear pointer.
+4.	Pop: Remove the front node and update the front pointer, checking for underflow.
+5.	Display: Print the queue from front to rear by traversing through all nodes.
+6.	Display Front/Rear: Print the data of the front and rear nodes.
+7.	Main: Perform push(), pop(), and display() operations on the queue.
+8.	End the program.
+
+PROGRAM:
+
+void traverseInOrder(struct node *dis)
+{
+
+if(dis!=NULL)
+{ 
+traverseInOrder(dis->left); 
+cout<<" "<<dis->data;
+traverseInOrder(dis->right);
+}
+
+
+}
+OUTPUT :
+
+
+
+RESULT:
+
+Thus, the C++ program to perform Inorder traversal of the below given tree is created successfully.
+![image](https://github.com/user-attachments/assets/f007c3df-8cbe-4783-a42c-8725d7e9c67f)
