@@ -1,0 +1,63 @@
+EX.NO : 8(C)   EXPRESSION TREE
+DATE : 
+
+PROGRAM STATEMENT:
+
+To construct an expression tree from the given postfix expression. Generate the inorder and preorder traversal of the given expression tree below
+
+![Picture1](https://github.com/user-attachments/assets/36c4347c-1def-47aa-be01-91b116faa5e9)
+
+
+
+
+
+
+ALGORITHM:  
+
+1.	Start the program.
+2.	Define Node Class: Create a node class with attributes value, left, right, and next. Initialize the node with a constructor to set value and set left and right to NULL.
+3.	Constructor: The parameterized constructor initializes the value and sets left and right pointers to NULL. The default constructor sets left and right pointers to NULL.
+4.	Friend Classes: Declare stack and expression_tree as friend classes so they can access private members of the node class.
+5.	End the program
+
+PROGRAM:
+
+class node
+{
+public:
+char value; 
+node*left; 
+node*right; 
+node*next=NULL; 
+node(char c)
+{
+this->value=c; 
+left=NULL; 
+right=NULL;
+}
+node()
+{
+left=NULL;
+right=NULL;
+}
+friend class stack;
+friend class expression_tree;
+};
+
+
+
+OUTPUT :
+
+
+
+
+![image](https://github.com/user-attachments/assets/d3083587-534c-45b8-959a-733f7c0b4c39)
+
+
+
+
+
+RESULT:
+
+Thus, the C++ program to Generate the inorder and preorder traversal of the given expression tree below is created successfully.
+
