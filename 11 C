@@ -1,0 +1,80 @@
+
+EX.NO : 11(C)                  SHORTEST PATH - DIJKSTRA'S ALGORITHM
+DATE : 
+
+PROGRAM STATEMENT:
+
+There is a directed weighted connected graph. You are given a positive integer n which denotes that the graph has n nodes labeled from 1 to n, and an array edges where each edges[i] = [ui, vi, weighti] denotes that there is an edge between nodes ui and vi with weight equal to weighti.
+
+Correct the given C++ function to find the dijkstra'a shortest path from every node to all other nodes in the given graph.
+
+
+
+![Picture1](https://github.com/user-attachments/assets/43841f60-0491-49d8-a6ff-683ec5000c7f)
+
+ALGORITHM:  
+
+1.	Start the program.
+2.	Initialize the distance for the source vertex to 0 and all other vertices to infinity.
+3.	Insert the source vertex into a set with its distance as the key.
+4.	While the set is not empty:
+a.	Extract the vertex with the minimum distance from the set.
+b.	For each neighboring vertex, check if the current path offers a shorter distance than previously known. If so, update the distance and insert it back into the set.
+5.	After processing all vertices, print the shortest distance from the source to each vertex.
+6.	End the program.
+
+
+
+PROGRAM:
+ 
+
+void Graph::shortestPath(int src)
+{
+
+set< pair<int, int> > setds; vector<int> dist(V, INF); 
+
+setds.insert(make_pair(0, src)); dist[src] = 0;
+
+while(!setds.empty())
+{
+
+
+pair<int, int> tmp =*(setds.begin()); 
+
+setds.erase(setds.begin());
+
+
+int u=tmp.second;
+
+list< pair<int, int> >::iterator i;
+
+for (i= adj[u].begin(); i != adj[u].end(); ++i)
+{
+
+int v= (*i).first;
+
+intweight =(*i).second;
+
+if(dist[v] >dist[u] + weight)
+{
+if(dist[v] != INF)
+
+setds.erase(setds.find(make_pair(dist[v], v))); 
+
+dist[v] = dist[u] + weight; setds.insert(make_pair(dist[v], v));
+}
+}
+}
+
+// Print shortest distances stored in dist[] printf("Vertex Distance from Source\n");
+
+for (int i= 0; i< V; ++i)
+
+printf("%d %d\n", i, dist[i]);
+}
+
+
+
+![image](https://github.com/user-attachments/assets/096bf5e6-2f85-4154-b31c-e4baef637f96)
+
+
