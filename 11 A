@@ -1,0 +1,36 @@
+EX.NO : 11(A)            PRIM'S MINIMUM SPANNING TREE
+DATE : 
+
+PROGRAM STATEMENT:
+
+To find the sum of weights of the edges of the M inimum Spanning Tree
+
+
+
+![Picture1](https://github.com/user-attachments/assets/1c536edb-f2b3-4c75-b2db-f6ffc440b150)
+
+
+ALGORITHM:  
+
+1.	Start the program.
+2.	Initialize a priority queue to store edges, each represented by (weight, vertex).
+3.	Choose an arbitrary starting vertex and mark it as visited.
+4.	Add all edges connected to the starting vertex into the priority queue.
+5.	While the priority queue is not empty, pop the edge with the minimum weight and if the destination vertex is not in the MST, add it and update the priority queue with edges from the newly visited vertex.
+6.	End the program by calculating the sum of the edge weights in the MST.
+
+PROGRAM:
+
+
+void Graph::addEdge(int u, int v, int w)
+
+{
+
+adj[u].push_back(make_pair(v, w)); 
+
+adj[v].push_back(make_pair(u, w));
+
+}
+
+![image](https://github.com/user-attachments/assets/d988d300-ba04-4cdb-a13b-02aaaf1da19c)
+
