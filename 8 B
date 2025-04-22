@@ -1,0 +1,65 @@
+EX.NO : 8(B)                  BINARY SEARCH TREE
+DATE : 
+
+PROGRAM STATEMENT:
+
+To write a C++ function to convert a binary tree into a binary search tree.
+
+
+![Picture1](https://github.com/user-attachments/assets/4478a6f9-5c19-4c70-a1b7-c7f61704c1d4)
+
+ALGORITHM:  
+
+1.	Start the program.
+2.	Define Function: Create a function convertBST that takes the root of the BST, an InOrderArray, and an index i as input.
+3.	Traverse Left Subtree: Recursively call convertBST on the left child of the current node.
+4.	Assign Data: Assign the value from InOrderArray[i] to the current node’s data, then increment i.
+5.	Traverse Right Subtree: Recursively call convertBST on the right child of the current node.
+6.	End the program.
+
+PROGRAM:
+
+void convertBST(node*root,vector<int>InOrderArray,int& i)
+{
+if(root){
+convertBST(root->left,InOrderArray,i);
+root->data = InOrderArray[i++];
+convertBST(root->right,InOrderArray,i);
+}
+
+
+}
+![Uploading image.png…]()
+
+OUTPUT :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RESULT:
+
+Thus, the C++ program to convert a binary tree into a binary search tree is created successfully
+![image](https://github.com/user-attachments/assets/e2a210e8-eed6-4a48-bfd3-0aad04789e41)
